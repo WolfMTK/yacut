@@ -1,10 +1,10 @@
 from flask import jsonify, request
 
+from settings import URL
 from . import app, db
+from .error_handlers import InvalidAPIUsage
 from .models import URLMap
 from .utils import get_unique_short_id, check_unique_url, check_symbols_url
-from settings import URL, LENGTH
-from .error_handlers import InvalidAPIUsage
 
 
 @app.route('/api/id/', methods=['POST'])
