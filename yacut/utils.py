@@ -1,9 +1,8 @@
 import random
-
 from string import ascii_lowercase, digits, ascii_uppercase
 
-from .models import URLMap
 from settings import LENGTH
+from .models import URLMap
 
 LETTERS = ascii_lowercase + digits + ascii_uppercase
 
