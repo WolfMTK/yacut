@@ -1,7 +1,8 @@
 import os
 
 URL = 'http://localhost/'
-LENGTH = 6
+LENGTH_MAX = 6
+LENGTH_MIN = 1
 
 
 class Config:
