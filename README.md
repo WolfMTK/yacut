@@ -94,3 +94,7 @@ pip install -r requirements.txt
 ```
 
 Коды запросов: 200, 404.
+
+# Пример заполнения файла .env
+
+Пример заполнения: [.env](https://github.com/WolfMTK/yacut/blob/master/.env.example)
