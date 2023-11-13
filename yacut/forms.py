@@ -2,14 +2,14 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length, URL, Optional, Regexp
 
-from settings import LENGTH_MAX, LENGTH_MIN
+from settings import LENGTH_MAX, LENGTH_MIN, LENGTH_URL
 
 
 class URLMapForm(FlaskForm):
     original_link = StringField(
         'Длинная ссылка',
         validators=(DataRequired(message='Обязательное поле.'),
-                    Length(max=255),
+                    Length(max=LENGTH_URL),
                     URL(message='Ошибка ввода URL-адреса.'))
     )
     custom_id = StringField(
