@@ -16,10 +16,10 @@ def index_view() -> str:
     if custom_id and not check_symbols_url(custom_id):
         flash('Данные символы не допустимы.')
         return render_template('index.html', form=form)
-    custom_id = custom_id or get_unique_short_id()
     if check_unique_url(custom_id):
         flash('Предложенный вариант короткой ссылки уже существует.')
         return render_template('index.html', form=form)
+    custom_id = custom_id or get_unique_short_id()
     db.session.add(URLMap(original=form.original_link.data,
                           short=custom_id))
     db.session.commit()
