@@ -1,3 +1,4 @@
+import itertools
 import random
 from string import ascii_lowercase, digits, ascii_uppercase
 
@@ -8,7 +9,10 @@ LETTERS = ascii_lowercase + digits + ascii_uppercase
 
 
 def get_unique_short_id() -> str:
-    return ''.join(random.choice(LETTERS) for _ in range(LENGTH_MAX))
+    for _ in itertools.count():
+        url = ''.join(random.choice(LETTERS) for _ in range(LENGTH_MAX))
+        if not check_unique_url(url):
+            return url
 
 
 def check_unique_url(short: str) -> bool:
