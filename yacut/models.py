@@ -1,12 +1,12 @@
 from datetime import datetime
 
-from settings import LENGTH_MAX
+from settings import LENGTH_MAX, LENGTH_URL
 from . import db
 
 
 class URLMap(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    original = db.Column(db.String(255), nullable=False)
+    original = db.Column(db.String(LENGTH_URL), nullable=False)
     short = db.Column(db.String(LENGTH_MAX), nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
 
